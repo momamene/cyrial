@@ -7,13 +7,16 @@ public class BaaaBPM : MonoBehaviour {
     {
         yield return new WaitForSeconds(12.0f);
         Time.timeScale = 0.15625f;
+        Missile[] missiles = FindObjectsOfType<Missile>();
+        for (int i = 0; i < missiles.Length; i++) {
+            Destroy(missiles[i].gameObject, 0.0f);
+        }
         StartCoroutine(Second());
     }
     IEnumerator Second()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.46875f);
         Time.timeScale = 1;
-        FindObjectOfType<Gun>().missileSpeed *= 1.5f;
     }
 	// Use this for initialization
 	void Start () {

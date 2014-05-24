@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7677da002ddae814c98aa0d58e3e336e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ORIGINAL_BPM: 128
+  ORIGINAL_BPM: 136.5
 --- !u!82 &1135259892
 AudioSource:
   m_ObjectHideFlags: 0
@@ -176,11 +176,11 @@ AudioSource:
   m_GameObject: {fileID: 1135259890}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 786c8e92389d5f742a5dba766e45e2e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a014d05932a073e458a886a5d45bb406, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .0890000015
+  m_Volume: .300000012
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -279,7 +279,7 @@ GUIText:
   m_GameObject: {fileID: 1175017860}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: '[Up : Jump]     [Down : Crouch]    [R : Restart]'
+  m_Text: '[Up : Jump]     [Down : Crouch]    [R : Restart] v0.11'
   m_Anchor: 0
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -315,7 +315,6 @@ GameObject:
   - 4: {fileID: 1582986041}
   - 212: {fileID: 1582986040}
   - 114: {fileID: 1582986037}
-  - 114: {fileID: 1582986042}
   - 50: {fileID: 1582986039}
   - 61: {fileID: 1582986038}
   m_Layer: 0
@@ -366,7 +365,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -402,21 +401,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1582986036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 0, z: 0}
+  m_LocalPosition: {x: -7, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &1582986042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1582986036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b51c097d719484092545054d47e5ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1898883098
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +545,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1912934075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.12865257, y: .52474761, z: 0}
+  m_LocalPosition: {x: 7.5, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -598,10 +586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a5e8ea7363ec341aa4db1a688ec80d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  middlemuzzle: {x: -.200000003, y: -.200000003, z: 0}
-  topmuzzle: {x: -.800000012, y: .699999988, z: 0}
+  middlemuzzle: {x: -.5, y: -.200000003, z: 0}
+  topmuzzle: {x: -.5, y: .699999988, z: 0}
   missileRoot: {fileID: 100000, guid: 813b1afa2e8ca7a48a411e32e9966526, type: 2}
-  missileSpeed: .649999976
 --- !u!1 &1988469377
 GameObject:
   m_ObjectHideFlags: 0

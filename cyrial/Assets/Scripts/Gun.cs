@@ -5,7 +5,6 @@ public class Gun : MonoBehaviour {
     public Vector3 middlemuzzle;
     public Vector3 topmuzzle;
     public GameObject missileRoot;
-    public float missileSpeed = 0.65f;
     public void Shoot()
     {
         AttackerState character_state = GetComponent<AttackerState>();
@@ -18,7 +17,7 @@ public class Gun : MonoBehaviour {
                 missile = (GameObject)Instantiate(missileRoot, transform.position + topmuzzle, Quaternion.identity);
                 break;
         }
-        missile.GetComponent<Missile>().speedScale = missileSpeed;
+        missile.GetComponent<Missile>().speed = 7.0f / FindObjectOfType<BeatGenerator>().GetTimeDelta();
         switch (character_state.location) {
             case AttackerState.Location.LEFT:
                 missile.GetComponent<Missile>().direction = Missile.Direction.RIGHT;

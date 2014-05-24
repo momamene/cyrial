@@ -10,8 +10,8 @@ public class Missile : MonoBehaviour {
         DOWN,
     }
     public Direction direction;
-    public float speedScale = 0.65f;
-    private float duration = 1.0f;
+    public float speed;
+    private float duration = 3.0f;
 	// Use this for initialization
 	void Start () {
         Destroy(gameObject, duration);
@@ -19,11 +19,11 @@ public class Missile : MonoBehaviour {
 	
     public float GetSpeed()
     {
-        return speedScale * FindObjectOfType<BeatGenerator>().GetTimeDelta();
+        return Time.deltaTime * speed;
     }
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         float speed = GetSpeed();
         switch (direction) {
             case Direction.LEFT:

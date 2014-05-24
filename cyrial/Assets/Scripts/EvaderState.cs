@@ -22,8 +22,9 @@ public class EvaderState : MonoBehaviour {
 	void Start () {
 	
 	}
-    void Beat()
+    IEnumerator Idlize()
     {
+        yield return new WaitForSeconds(FindObjectOfType<BeatGenerator>().GetTimeDelta() / 2.0f);
         state = State.IDLE;
         GetComponent<SpriteRenderer>().sprite = idleSprite;
         GetComponent<BoxCollider2D>().size = idleColliderSize;
@@ -36,34 +37,18 @@ public class EvaderState : MonoBehaviour {
             GetComponent<SpriteRenderer>().sprite = crouchSprite;
             GetComponent<BoxCollider2D>().size = crouchColliderSize;
             GetComponent<BoxCollider2D>().center = crouchColliderCenter;
+            StartCoroutine(Idlize());
         }
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
             state = State.JUMP;
             GetComponent<SpriteRenderer>().sprite = jumpSprite;
             GetComponent<BoxCollider2D>().size = jumpColliderSize;
             GetComponent<BoxCollider2D>().center = jumpColliderCenter;
+            StartCoroutine(Idlize());
         }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("asdfasdf");
-        bool isHit = false;
-        switch (state) {
-            case State.IDLE:
-                isHit = true;
-                break;
-            case State.CROUCH:
-                isHit = FindObjectOfType<AttackerState>().gunPosition == AttackerState.GunPosition.MIDDLE;
-                break;
-            case State.JUMP:
-                isHit = FindObjectOfType<AttackerState>().gunPosition == AttackerState.GunPosition.TOP;
-                break;
-        }
-        if (isHit) {
-            FindObjectOfType<Life>().Decrease();
-        }
-        else {
-            FindObjectOfType<Score>().Increase();
-        }
+        FindObjectOfType<Life>().Decrease();
     }
 }
