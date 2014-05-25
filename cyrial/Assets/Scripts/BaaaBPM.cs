@@ -20,7 +20,7 @@ public class BaaaBPM : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(First());
+        //StartCoroutine(First());
 	}
 	
 	// Update is called once per frame

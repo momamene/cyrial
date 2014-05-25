@@ -23,7 +23,7 @@ public class Missile : MonoBehaviour {
     }
 
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
         float speed = GetSpeed();
         switch (direction) {
             case Direction.LEFT:
