@@ -28,10 +28,4 @@ public class Life : MonoBehaviour {
 		guiText.text = "DEATH";
         guiText.enabled = true;
     }
-	public void Clear()
-	{
-		Time.timeScale = 0;
-		guiText.text = "CLEAR";
-		guiText.enabled = true;
-	}
 }
